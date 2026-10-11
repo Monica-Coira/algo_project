@@ -1,0 +1,3 @@
+input_*.txt
+*.exe
+__pycache__/
