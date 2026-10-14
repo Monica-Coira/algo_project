@@ -128,7 +128,7 @@ std::tuple<long long, std::vector<int>> program2(int n, int k, std::vector<int> 
     i = leftCount - 1;
     while (i>=0){
         route.push_back(leftRoute[i]);
-        i = i + 1;
+        i = i - 1;
     }
     position = bestRightPosition;
     route.push_back(position);
