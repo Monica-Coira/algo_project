@@ -3,6 +3,7 @@ using namespace std;
 #include <vector>
 #include <tuple>
 #include <climits>
+#include <utility>
 /* Solution to program 3
 * @param n: the number of panels
 * @param k: maximum number of positions in a forward jump
@@ -28,14 +29,14 @@ std::tuple<long long, std::vector<int>> program3(int n, int k, std::vector<int>&
         auto [routeCost, routePath] = program3(n - i, k, costs);
         if (routeCost < minCost) {
             minCost = routeCost;
-            cheapestPath = routePath;
+            cheapestPath = move(routePath);
         }
     }
     
     minCost = minCost + costs[n - 1];
     cheapestPath.push_back(n);
 
-    return make_tuple(minCost, cheapestPath);
+    return make_tuple(minCost, move(cheapestPath));
 }
 
 int main(){
