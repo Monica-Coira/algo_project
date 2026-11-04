@@ -2,6 +2,7 @@ using namespace std;
 #include <iostream>
 #include <vector>
 #include <tuple>
+#include <climits>
 /* Solution to program 3
 * @param n: the number of panels
 * @param k: maximum number of positions in a forward jump
@@ -9,7 +10,7 @@ using namespace std;
 * @return a tuple containing the minimum total energy cost and the indices of the visited panels in increasing order(1-indexed, including n and excluding 0)
 */
 
-std::tuple<long long, std::vector<int>> program3(int n, int k, std::vector<int> costs){
+std::tuple<long long, std::vector<int>> program3(int n, int k, std::vector<int>& costs){
     if (n == 0) {
         vector<int> noPath;
         return make_tuple(0, noPath);
